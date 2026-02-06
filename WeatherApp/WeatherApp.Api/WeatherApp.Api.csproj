@@ -4,10 +4,16 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>6ec95d28-76b6-47c3-b97e-59acc7a95205</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WeatherApp.Application\WeatherApp.Application.csproj" />
+    <ProjectReference Include="..\WeatherApp.Infrastructure\WeatherApp.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
