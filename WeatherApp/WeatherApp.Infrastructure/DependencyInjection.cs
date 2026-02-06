@@ -10,9 +10,17 @@ namespace WeatherApp.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            // Configure settings using the Bind approach
+            // Configure and validate settings
             var settings = new OpenWeatherMapSettings();
             configuration.GetSection(OpenWeatherMapSettings.SectionName).Bind(settings);
+
+            // Validate settings at startup
+            if (string.IsNullOrWhiteSpace(settings.ApiKey))
+            {
+                throw new InvalidOperationException(
+                    "OpenWeatherMap API key is not configured. " +
+                    "Set it using: dotnet user-secrets set \"OpenWeatherMap:ApiKey\" \"your-key\"");
+            }
 
             services.Configure<OpenWeatherMapSettings>(
                 options =>
