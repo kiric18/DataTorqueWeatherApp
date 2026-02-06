@@ -8,6 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
+// Add CORS for React client - MUST be before AddControllers
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+          .AllowAnyHeader()
+          .AllowAnyMethod();
+    });
+});
+
 // Add API services
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -17,7 +28,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Title = "Weather API",
         Version = "v1",
-        Description = "A weather API that provides forecasts and clothing recommendations for Wellington commuters."
+        Description = "A weather API that provides forecasts and clothing recommendations."
     });
 });
 
@@ -27,13 +38,14 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Weather API v1");
-    });
+    app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// REMOVE or comment out HTTPS redirection for local development
+// app.UseHttpsRedirection();
+
+// CORS must be called BEFORE other middleware
+app.UseCors();
 
 // Simulated failure middleware (every 5th request)
 app.UseSimulatedFailure(failureInterval: 5);
@@ -43,5 +55,4 @@ app.MapControllers();
 
 app.Run();
 
-// Make Program class accessible for integration tests
 public partial class Program { }

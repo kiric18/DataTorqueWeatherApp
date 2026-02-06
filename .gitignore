@@ -56,3 +56,4 @@ nunit-*.xml
 /WeatherApp/.vs/WeatherApp/FileContentIndex
 /WeatherApp/.vs/WeatherApp/v17
 /WeatherApp/.vs/WeatherApp/copilot-chat/ce2ae7a8/sessions
+/WeatherApp/weather-client/node_modules

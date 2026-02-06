@@ -1,5 +1,4 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36915.13 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -20,6 +19,49 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.Application.Tests", "WeatherApp.Application.Tests\WeatherApp.Application.Tests.csproj", "{D9DCF6B6-76CB-4921-AB54-A38BAC12CF12}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.Api.Tests", "WeatherApp.Api.Tests\WeatherApp.Api.Tests.csproj", "{2D7AF70B-4FBF-432E-BF17-11BE4D2B5C09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "weather-client", "weather-client", "{8A9B0C1D-2E3F-4A5B-6C7D-8E9F0A1B2C3D}"
+	ProjectSection(SolutionItems) = preProject
+		weather-client\package.json = weather-client\package.json
+		weather-client\tsconfig.json = weather-client\tsconfig.json
+		weather-client\tsconfig.node.json = weather-client\tsconfig.node.json
+		weather-client\vite.config.ts = weather-client\vite.config.ts
+		weather-client\index.html = weather-client\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9B0C1D2E-3F4A-5B6C-7D8E-9F0A1B2C3D4E}"
+	ProjectSection(SolutionItems) = preProject
+		weather-client\src\App.tsx = weather-client\src\App.tsx
+		weather-client\src\App.css = weather-client\src\App.css
+		weather-client\src\main.tsx = weather-client\src\main.tsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{0C1D2E3F-4A5B-6C7D-8E9F-0A1B2C3D4E5F}"
+	ProjectSection(SolutionItems) = preProject
+		weather-client\src\components\WeatherCard.tsx = weather-client\src\components\WeatherCard.tsx
+		weather-client\src\components\WeatherCard.css = weather-client\src\components\WeatherCard.css
+		weather-client\src\components\LocationInput.tsx = weather-client\src\components\LocationInput.tsx
+		weather-client\src\components\LocationInput.css = weather-client\src\components\LocationInput.css
+		weather-client\src\components\ErrorMessage.tsx = weather-client\src\components\ErrorMessage.tsx
+		weather-client\src\components\ErrorMessage.css = weather-client\src\components\ErrorMessage.css
+		weather-client\src\components\LoadingSpinner.tsx = weather-client\src\components\LoadingSpinner.tsx
+		weather-client\src\components\LoadingSpinner.css = weather-client\src\components\LoadingSpinner.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hooks", "hooks", "{1D2E3F4A-5B6C-7D8E-9F0A-1B2C3D4E5F6A}"
+	ProjectSection(SolutionItems) = preProject
+		weather-client\src\hooks\useWeather.ts = weather-client\src\hooks\useWeather.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{2E3F4A5B-6C7D-8E9F-0A1B-2C3D4E5F6A7B}"
+	ProjectSection(SolutionItems) = preProject
+		weather-client\src\services\weatherService.ts = weather-client\src\services\weatherService.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "types", "types", "{3F4A5B6C-7D8E-9F0A-1B2C-3D4E5F6A7B8C}"
+	ProjectSection(SolutionItems) = preProject
+		weather-client\src\types\weather.ts = weather-client\src\types\weather.ts
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +109,11 @@ Global
 		{79BED18C-641F-4D05-9E6B-A580AEE07CDB} = {6C4096A4-24C1-4B86-909F-896DE64B61E8}
 		{D9DCF6B6-76CB-4921-AB54-A38BAC12CF12} = {6C4096A4-24C1-4B86-909F-896DE64B61E8}
 		{2D7AF70B-4FBF-432E-BF17-11BE4D2B5C09} = {6C4096A4-24C1-4B86-909F-896DE64B61E8}
+		{9B0C1D2E-3F4A-5B6C-7D8E-9F0A1B2C3D4E} = {8A9B0C1D-2E3F-4A5B-6C7D-8E9F0A1B2C3D}
+		{0C1D2E3F-4A5B-6C7D-8E9F-0A1B2C3D4E5F} = {9B0C1D2E-3F4A-5B6C-7D8E-9F0A1B2C3D4E}
+		{1D2E3F4A-5B6C-7D8E-9F0A-1B2C3D4E5F6A} = {9B0C1D2E-3F4A-5B6C-7D8E-9F0A1B2C3D4E}
+		{2E3F4A5B-6C7D-8E9F-0A1B-2C3D4E5F6A7B} = {9B0C1D2E-3F4A-5B6C-7D8E-9F0A1B2C3D4E}
+		{3F4A5B6C-7D8E-9F0A-1B2C-3D4E5F6A7B8C} = {9B0C1D2E-3F4A-5B6C-7D8E-9F0A1B2C3D4E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {661C1321-A61F-44EF-AAE2-F556465A169D}
